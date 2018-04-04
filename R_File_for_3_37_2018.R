@@ -116,3 +116,59 @@ cat(email1_body_200[6])
 
 
 
+
+
+###################### Regular expression ############3
+
+
+
+#1 : 
+fruit = c("apple", "banana","pear","pinapple")
+
+#2 detects if pttern is found
+
+str_detect(fruit, "a")
+
+#pattern start with a
+str_detect(fruit, "^a")
+
+## pattern ends with a
+str_detect(fruit, "a$")
+
+
+##patern to check if it has a, e, o,u or i
+str_detect(fruit,"[aeiou]")
+
+# check anything between a to d 
+str_detect(fruit,"[a-d]")
+
+## does str has any alfa
+str_detect(fruit,"[a-z]")
+
+## does str has any numeric
+str_detect(fruit,"[0-9]")
+
+
+# 3 > start with a and ends with e
+
+
+str_detect(fruit,"^a[a-z]*e$") 
+#or  ... Imp : you are weak at this.
+str_detect(fruit,"^a.*e$")  ### . means any char and * varaible with 1 or more value
+
+#4 detect the phone number
+
+phone = "213 472 4782"
+str_detect(phone, "[0-9]{3} [0-9]{3} [0-9]{4}" )
+
+phone_v = c("213 472 4782","213-890-8901","6788901879", "(217) 325 6789")
+str_detect(phone_v, "[0-9]{3}.*[0-9]{3}.*[0-9]{4}" )
+#or prof way .. the 1st parathis comes before number and optional
+str_detect(phone_v, "[(]?[0-9]{3}[)]?[ -][0-9]{3}[ -][0-9]{4}" )
+
+## find number in bodies
+str_detect(email1_body_200, "[(]?[0-9]{3}[)]?[ -][0-9]{3}[ -][0-9]{4}" )
+
+
+
+
